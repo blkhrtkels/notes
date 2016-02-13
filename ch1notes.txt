@@ -1,0 +1,7 @@
+Work Flow:
+
+3 components
+	
+	Text Editor  Version Control System[vcs]   browser
+
+	ex. Sublime	ex. Git			    ex. Chrome

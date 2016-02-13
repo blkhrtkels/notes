@@ -1,0 +1,31 @@
+Book for class:
+
+Learning Web App Development, Semmy Purewal
+
+Fullstock-front end webdevelopment(client side), back end web development(server side)
+
+
+	HTML
+	CSS
+	Javascript(also used in backend)
+	jQuery				<---Frontend
+	Bootstrap
+
+
+
+MEAN Stack:
+	
+	Mongo DB (Database manager)
+	Express	 (server)
+	Angularjs	           <----Backend
+	Nodejs
+
+
+[Client]<------------------------------[Server]
+	------------------------------>
+
+
+
+
+	
+	

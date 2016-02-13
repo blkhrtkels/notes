@@ -1,0 +1,165 @@
+CSS:
+
+Pagelayout- 
+
+margin,borders, padding add to the content window of the browser
+	*browsers have non zero values automatically*
+	*can reset all browser values to 0 with browser reset*
+
+**These are all called Declarations**
+
+hiding elements:
+
+	visibility: hidden [hides element but leaves space it creates]
+
+	
+	display: none [hides content and removes space it creates]
+		 inline
+		 block
+
+margin = auto [centers on pg]
+
+position: fixed [elements stay in fixed position]
+z-index: 12 [assign numbers, highest number is on the top, direction coming 						out from the screen toward viewer]
+
+clear: both; [ex. value]
+ 	[prevents elements from wrapping around other elements]
+
+float: left; 
+float: right; 
+float: center;
+	[makes element float to whichever direction specifined]
+
+
+Javascript: [goes in html doc.]
+	    [can change html content, attributes, styles(css), validate data]
+	    [based on C, JS is a scritping language, everthing is dynamic]
+	    [Interpreted language, interpreted and executed line by line as it 								goes down]
+*JavaScript can be placed in the <body> and the <head> sections of an HTML page*
+*JavaScript can be placed in the <body> and the <head> sections of an HTML page*
+
+static [language is compiled, advantage: code is checked before it is ran]
+
+script should be last thing in html
+Browser runs files from top to bottom
+Put script as last thing in the body
+
+	<body>
+		<script src="TemplateJS.js"></script>
+	</body>
+
+
+
+Immediately Invoked Function Expression [IIFE]
+
+
+JS template to use/memorize
+(function () {
+	"use strict";
+	
+      var main = function () {
+	console.log{'hello world');
+};
+	$(document).ready(function () { [loads document then runs functions]
+	main();
+	});
+}()};
+
+[prints hello world with js]
+
+[function declaration] (function() {
+				    
+			            .
+				    .
+				    .
+
+				}()); <--parens call the function immediately
+
+control+shift+j [brings up browser console]
+		[look in console if js errors occur]
+
+<http://code.jquery.com/jquery-.2.2.0
+
+getElementById() [finds hmtl element based on id name]
+
+Types:
+	numeric type 
+	string type
+	array type
+	object type
+	no boolean type: so no true or false statements
+	function type
+
+Control structures:
+			if 
+			while
+			for
+
+Comparison opperators:
+			>[greater than], <[less thans]
+			==, === [looks for same values and same type]
+			!=[not equal], !==[not equal]
+			
+			[all the same in js] ex. 8==8
+			    			 8==8.0
+			    			 8=="8"
+		            			 8=='8'
+
+					    ex. !(8==="8")
+					    ex. 8!=="8"
+
+Boolean operators:
+
+			&& [ands], ||[ors]
+
+= [assign operator]
+
+In js: variables have to be declared
+		var [declares variable]
+		
+			ex. var a;
+			    a = 4;
+			    a = "bob";
+
+anything other than 0 = true
+zero values = false
+
+truthy: nonzero, string
+falsey: 0, "", undefined
+
+ex.
+	var a = 3;
+	if (a) 
+		[interpreted as true bc var a is a nonzero value]
+
+
+if statement:
+
+		if () {
+
+		   }
+		   else {
+
+		  }
+
+First Class Datatype: [Functions in js are first class datatypes]
+
+		1. Can be named
+		2. can be passed as an argument
+		3. can be returned as a value from a function
+
+	var main = function() {
+		console.log("hello world"); [first class datatype ex]
+			}
+		alternately
+	
+	function main() {
+		
+		}
+
+		main(); [invokes main]
+
+Java: everything is an object or its primitive
+JS: do not have to have objects
+
+Method: refers to the behavior of an object

@@ -1,0 +1,455 @@
+best to separate different functional parts into specific folders for web apps
+
+event handler- adds class to object
+
+.append duplicates items selected
+
+look at examples on moodle later today 
+use js and jquery templates off of moodle
+
+magic number for problem one on homework is possibly 34
+print homework on console
+look up sprites
+
+jQuery- javascript library
+
+
+"Learning Web App Development" Chapter 3 notes:
+
+	CSS- a collection of rulesets
+
+		Ruleset- a collection of style rules that are applied to some subset
+				of elements in the DOM
+
+			consists of a selector (which can think of as a tag name for now)
+
+			
+				opening curly brace
+					list of rules
+				closing curly brace
+
+	each rule has a specific PROPERTY followed by a colon
+					  followed by a value(or list of values separated
+								by spaces)
+					  followed by a semicolon
+
+			
+				ex. body {
+					width: 800px;
+					background: lightcyan;
+					color: #ff0000;
+				}
+
+				*ruleset that gets applied to the body element in the DOM
+
+				selector- body
+					*these rules apply to all of content of body element
+						as well as any elements contained in body element
+
+always comment parts of code that aren't obvious
+
+html elements are for the most part displayed in 2 ways:
+
+		inline  and block
+
+inline: applies to elements that have the type a or span
+
+		means content will display on the same line as the surrounding content
+
+		ex. <div>
+			This is a paragraph and this <span>word</span> appears inline.
+			This <a href="http://www.example.com">link</a> will also apear inline.
+		   </div>
+
+			*inline elements(span and a) within block element (the div)
+
+block elements: 
+		have 3 properties that inline elements don't
+		padding
+		border
+		margin
+
+			order from top of browser to the bottom:
+				1. margin
+				2. border (element goes within the border)
+				3. padding
+				4. content
+				5. element
+		
+			*image ex saved in ch. 3
+
+
+MOST IMPORTANT ASPECT OF CSS: effective use of selectors
+
+type selector: uses tag name to select all elements with same name
+
+Can add a class to ANY DOM element
+
+	ex. <p class="first">
+		paragraph one
+	    </p>
+
+	
+Selecting  p class="first in css
+	
+	p.first {
+		color: red;
+	}
+
+if the CLASS only appears on a certain type of element (true in above ex) we can omit
+the tag name.
+
+	ex. .first {
+		color: red;
+	 }
+
+PSEUDOCLASSES:
+
+	a tag can be styled with css like any other DOM element
+
+	ex. html:
+		
+		<body>
+			<a href="http/:www/example.com">click me</a>
+		</body>
+
+	
+	  css:
+
+		a {
+			color: blue;
+		}
+			/*css code that changes all links color to blue*/
+
+
+RULESET for changing color of visited links:
+
+	a {
+		color: blue;
+	}
+	
+	a:visited {
+		color: red;
+	}
+	
+		/*changes link color after click to red*/
+
+visited is an example of a psuedoclass
+	
+	almost behaves like a normal class, we can style elements that have the class in the same way as normal classes
+	
+	Main difference: the browser actually implicitly adds the class for us
+
+Common use for pseudoclasses:
+		changing the way a link is displayed when a user hovers over it
+
+use the hover pseudoclass
+
+	ex. 
+		a {
+			color: blue;
+			text-decoration: none;
+		}
+
+		a:visited {
+			color: red
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+			/*creates an underline on link when mouse hovers over the link*/
+
+
+*as DOM gets more complicated it is necessary to create more complicated selectors
+
+
+	ex. html:
+		<body>
+			<h1>what up world</h1>
+
+				<div class="content">
+					<ol>
+						<li>list item <span class="number">first</span></li>
+						<li>list item <span class="number">second</span></li>
+						<li>list item <span class="number">third</span></li>
+					</ol>
+
+					<p>This is the <span>first</span> paragraph</p>
+					
+					<p>This is the <span>second</span> paragraph</p>
+			      </div>
+
+			      <ul>
+				    <li>list item <span class="number">1</span></li>
+				    <li>list item <span class="number">2</span></li>
+				    <li>list item <span class="number">3</span></li>
+			      </ul>
+
+
+	      </body>
+
+
+	css:
+		ol {
+			border: 5px red;
+			border-radius: 10px;
+		} /*creates a rounded red border around the ordered list*/
+
+		ol li {
+			color: purple;
+		} /*changes color of the ordered list items only*/
+
+If there are several ordered lists on the page, we may want to get more specific and select only the li elements
+that are DESCENDANTS of the content div element:
+
+		.content li {
+				color: purple;
+			}
+
+To set background for the FIRST li elements for BOTH lists to a different color use the 
+psuedoclass 
+		first-child (psuedoclass that represents elements that are first-child of their parents)
+
+
+		ex. 
+			li:first-child {
+				background: green;
+		}
+	
+
+CASCADING RULES:
+
+	browser uses more specific selectors first when conflicts arise
+
+in this ex. 
+		p {
+		    color: yellow;
+		}
+
+		p {
+		   color: green;
+		}
+
+	*the cascading rules specify that the ruleset that appears LATER in the css
+	list will be applied. So the paragraphs will be green
+
+Inheritance:
+
+	descendants INHERIT properties from their ancestors
+		if we create a style on an element all descendants of that element in the 
+		DOM will also have that style
+			UNLESS
+		that style is overridden by another ruleset that targets that element
+
+For Example:
+
+		if we select the body and change the color
+			
+				body {
+					color: yellow;
+				}
+		/**
+		 *since h1 is a descendant of the body tag
+		 *it will have a yellow backround.
+		 */
+
+			       h1 {
+					color: red;
+			}
+
+		/**
+		 *h2 is also a descendant of the body, but
+		 *we'll override the background so it's 
+		 *not yellow
+		 */
+
+			     h2 {
+				color: green;
+			}
+
+MOST PROPERITES WORK THIS WAY
+BUT 
+NOT ALL PROPERITES ARE INHEREITED BY DEFAULT
+
+
+some NONINHERITED propeties are:
+
+		block-style elements:
+			margin
+			padding
+			border
+
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		/**
+		 *h1 will not inherit the margin and padding of the body
+		 *even if we don't specify an alternative
+		 */
+
+		h1 {
+		
+		}
+
+
+Layouts and Floats:
+
+	general properties that affect the overall layout of the page relative to a single element
+	these propeties give developers more control over where the objects appear
+
+common property of this type:
+
+		float property 
+
+		property values: left or right
+
+	ex.  html:
+
+			<body>
+			     <main>
+				<nav>
+				   <p><a href="link1">link1</a></p>
+				   <p><a href="link2">link2</a></p>
+				   <p><a href="link3">link3</a></p>
+				   <p><a href="link4">link4</a</p>
+			        </nav>
+
+				<p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+       					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+       					enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+       					aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+       					in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+			        </p>
+			    </main>
+		      </body>
+
+nav element and p element are contained in a main element
+	separate p element for each link to make elements appear as block elements(one on each line)
+
+*without any styling the elements are stacked on top of each other
+**normally use ul or ol tags with li tags for link lists**
+
+	css:
+		main {
+			width: 500px;
+			margin: auto;
+			background: gray;
+		}
+
+		nav {
+		      /*uncomment next line to create border around nav*/
+		      /*border: 3px black; */
+		     width: 200px;
+		     float: right;
+		}
+
+		p.content {
+			margin: 0; /*zero out the default margin*/
+		}
+
+Creating a 2 column grid with this code:
+
+	float the p element to the left
+	float the nav element to the right
+	make sure combined size of 2 elements fit inside of the size of the container (i.e. the main element)
+
+
+		main {
+			width 500px;
+			margin: auto;
+			background: gray;
+		}
+
+		nav {
+			width: 100px;
+			float: right;
+		}
+
+		/*remove the defaults on the p elements inside the nav*/
+
+		nav p {
+			margin: 0;
+			padding: 0;
+		}
+
+		p.content {
+			margin: 0;
+			float: left;
+			width: 400px;
+		}
+
+*when all elements contained in an element are floated, the height of the containing element
+becomes 0
+
+to fix this 
+
+set the overflow property of the containing div to auto:
+
+	main {
+		width: 500px;
+		margin: auto;
+		background: gray;
+		overflow: auto;
+	}
+
+
+**keep the width of the elements inside the container smaller than the total width of 
+the container** 
+
+    ex. if you add 20 px of padding 
+
+		you subtract twice the padding (bc there is both left and right 
+		padding of 10 pixels on the p class content) off of the width of
+		p element
+
+
+	main {
+		width: 500px;
+		margin: auto;
+		background: gray;
+		overflow: auto;
+	}
+
+
+	nav {
+		width: 100px;
+		float: right;
+	}
+	
+	p {
+		margin: 0; /*removes the default margin on p element */
+		padding: 10px;
+		float: left;
+		width: 380px; /* 400 - 2*10 = 380 */
+	}
+
+	
+	/*the 400 comes from subrtacting the nav width from the main width, the 2*10
+	  comes from there being 10px of padding on both sides of the p element, so the total padding 
+	  is 20px*/
+
+	**this must be applied whenever we add nonzero border or margin to elements**
+
+The clear property:
+
+	Universal selector- selects all elements in the DOM
+
+		ex. 
+			* {
+			    margin: 0;
+			    padding: 0;
+			}
+
+			/*sets all elements padding and margins to 0*/
+
+
+Using the clear property:
+
+	can force the footer element to be underneath a floating element on the right,
+	the left, or under both right and left floating elements.
+		
+		
+
+		

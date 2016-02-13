@@ -1,0 +1,121 @@
+HTML-Hypertext Markup Language
+
+WYSIWYG= what you see is what you get
+
+UTF-8- default encoding, allows page to be seen everywhere
+
+<!DOCTYPE html>-declaration tag, tells browser what the document type is
+
+<html lang= "en">-opening tag  lang attribute- tells what language the doc is in
+
+elmenents-content between
+
+</html>-closing tag
+
+
+HTML-structure of pages
+CSS-style of pages
+	2 separate files
+
+DOM- document object model, represented by a tree that shows how elements are related
+	all elements need to be closed
+	Determines html hierarchy 
+					<html>
+				<head>	<body>
+				<title>	<p>		<ol>
+					(page content)	<li> <li> <li>
+				
+					</html>
+		
+<html>
+	<head>
+		<title>My first page</title>
+	</head>
+		<body>-for actual content
+			<p>-paragraph tag, block element
+				page content
+			</p>
+		</body>
+
+</html>
+
+2 kinds of elements
+	Block- sets elements apart from everthing else
+	Inline- ex. <em> tag
+
+List tags
+	Ordered- numbered lists, tag- <ol></ol>
+	Unordered- bulleted lists, tag- <ul></ul>
+
+<ol>-block element
+<ul>- block element
+
+<ol>
+	<li>First thing</li>-list tag content
+	<li>Second thing</li>
+
+Table element- block element
+	<table>- tag
+		
+		<thead>- head tag for table
+
+			<tr>- table row
+				<th>col1</th>- allows styling of table head
+				<th>col2</th>
+				<th>col3</th>
+			</tr>
+			
+		</thead>
+			<tbody>- vody tag for table
+				<td>
+					1-table data content
+				</td>
+				<td>
+					2
+				</td>
+				<td>
+					3
+				</td>
+			</tbody>
+	</table>
+
+						table image example
+							
+						col1 col2 col3
+						 1     2   3
+
+<h1>- heading tag 1, goes in body tag
+<h2>
+<h3>
+<h4>
+<h5>
+<h6>
+
+Anchor element
+	to create links to other pages, etc...
+	
+	tag- <a href="link">link text</a>
+
+defining attributes in html
+	use = sign, element declaration within double quotes ""
+
+ex.
+	<a href="http://www.google.com">google</a>
+
+html comments tag
+	<!--   -->
+
+div element- <div> (block element)
+span element- <span> (inline element)
+	these give targets for css code, divides elements into pieces 
+
+semantic elements- tells you what the elements are
+	ex. table tag, ordered list tag, etc...
+
+non-semantic elements
+
+
+Brackets program
+	have project in specific folder
+	open the folder to work on the project
+	

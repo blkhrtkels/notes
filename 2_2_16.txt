@@ -1,0 +1,123 @@
+JS notes:
+		book to look up= "javascript the good parts"
+
+Java: Classical Inheritance
+	*inheritance based on class definitions*
+
+JS only has objects and no classes
+JS inheritance is prototypal 
+	Prototypal Inheritance
+		objects inherit directly from other objects
+
+functions come with prototypes
+Methods attach to prototypes
+always use this
+var means variable
+JS is case sensitive
+constructors get capitalized first letters
+JS has no privacy
+
+
+	var Mammal = function (name) {
+		this.name= name;
+
+		}
+
+		Mammal.prototype.getName=
+			function() {
+			return this.name;
+			};
+
+	var cat1= new Mammal('fluffy');
+		
+		cat1.getName()
+
+		Mammal.prototype. says=
+			function() {
+			return this.saying ||' ';
+		}
+
+	var cat= function (name) {
+		this.name= name;
+		this.saying= 'meow';
+		}
+			
+		cat.prototype = new Mammal();
+
+	var dog= function (name) {
+		this.name= name;
+		this.saying= 'bark';
+		}
+
+	
+		dog.prototype= new Mammal();
+		Mammal.prototype.runs= function() {
+		return this.speed ||' ';
+		}
+		dog.prototype.speed = 'slow';
+	
+	var dog1= new Dog('fido');
+		dog1.runs()
+
+Different way to write JS:
+
+	Object called function
+
+Functional Programming:
+	no assignment statement
+	have local variables not visible outside their functions
+		adds privacy to js
+	can have multiple parameters 
+
+
+	var addem = function (n) {
+		return function (m) {  
+		   return n + m;        <--function returns sum of n and m
+		};
+	};
+
+		addem(3)(7)	<--addem is a function
+				<--returns telling you it is a function
+
+			adding (7) makes it return 10 value
+	
+	var add3 = addem(3);
+		
+		add3(7) <--invokes previous function
+
+	var mammal = function (name) {  <--not using a constructor so no capitalization
+		return {
+			getName: function () {    <--this whole thing is an object literal
+				return name;
+			};
+			says : function () {
+			return 'not much';
+		     }
+		};
+            };
+
+
+		mammal('herb').getName() <--returns an object
+
+	var mammal1= mammal('herb');
+		mammal1.getName()
+
+		when we called addem(3) it is called a closure
+					
+		closure: function plus enviroment that was created along with it
+
+	var groundhog = function (name) {
+		var superior = mammal(name);
+			return {
+			   parent:superior,
+			   getName: superior.getName,
+			   says: function (val) {
+			   if (val === 'sunny')
+
+			}
+		};
+	 };
+
+	var phil= groundhog('phil');
+
+	

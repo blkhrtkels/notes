@@ -1,0 +1,35 @@
+Unix Commands [used in Gitbash]
+
+ls [lists all items in directory]
+cd [change directory]
+mkdir [creates directory]
+git init [creates git repository]
+ls .git [shows hidden git folder]
+ls -a [shows all hidden files]
+
+git config --global user.name "First last name"
+git config --global user.email "email address"
+	[configures git to retain personal info]
+		**only needs to be init. once**
+
+cd .. [moves back one directory]
+pwd [print working directory, tells what dir. you're in]
+git status [shows status of git repository]
+git add [adds specified file to git repo.]
+git commit [commits changes to repo.]
+-m [shows a message displaying what's changed since last commit]
+	----> git commit -m "type of commit" ie. "Initial commit"
+	----> git commit m "Initial commit"
+
+git log [shows history of all commits made to file]
+
+
+summary:
+
+Work Flow:
+
+3 components
+	
+	Text Editor  Version Control System[vcs]   browser
+
+	ex. Sublime	ex. Git			    ex. Chrome

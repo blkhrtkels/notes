@@ -1,0 +1,133 @@
+Chapter 3: Style
+
+CSS: Cascading Style Sheets
+
+**style order- first code browser sees within css is displayed**
+**if you have an external css file don't use internal style tags**
+
+
+New Tag- goes in head element
+
+<head>
+	<style>
+		internal css- goes inside html file
+	</style>
+</head>
+
+*css can be placed directly into html tags- not usually done
+
+<p __css___>
+	*inline css
+
+selector- determines what element is being styled
+declarations- defines what style aspect will be created
+
+	ex. h1<--selector {color:blue; font-size:12 px;}<--declarations 
+								go inside {}
+
+Selectors:
+		h1
+		* <--selects everything ex. all text {color:red;}<--turns all 									text red
+
+Class/Id:
+
+Class--> for multiple elements, multiple things can belong to same class
+Id--> for one specific element
+
+.<--for class
+#<--for id
+
+**usually just use classes, browser has a hard time with ids**
+
+html code:			css code:
+
+<p class="red">			p.red {color: red;}
+
+<p id= "green">			#green {color: green;}
+
+
+link tag: links css file to html
+
+	mycss.css
+
+<head>
+	<link rel="stylesheet" type="text.css" href="mycss.css">
+</head>
+
+browser rendering order
+	1. browser defaults
+	2. external css file
+	3. internal css- within <style> tag, applies to entire doc.
+	4. inline css- within regular hmtl tag, only applies to that specific 											element
+		*why css is called cascading style sheet
+
+
+**Always located in the <head> tag**
+<style> tag
+<link> css tag
+
+
+CSS TAGS:
+
+ul {}<-unordered list elements
+ol {}<-ordered list elements
+li {}<-all list items
+
+ul li {}<-only unordered list items are styled
+ul,li{}<-applies to multiple elements 
+
+,<--multiple css commands
+
+ol li{}<--items inside ordered list
+ul li{}<--items inside of unordered list
+
+p {}<--selects all paragraphs 
+	-alternately- 
+* p {}<--selects all paragraphs 
+
+element+element<--selects items/element immediatelty after another item/element
+	ex. 
+		h2 + p {color: red;}
+			**changes paragraph right after h2 tag in html to red**
+
+element-element<--selects items/elements that follows another item/element
+element>element--selects all elements where the parent is the other specified 									element
+
+Psuedo-classes: **depend on the structure of html**
+		**uses type of selector that you are looking for the nth child of
+
+selector ex.
+	|
+	|
+	li:first-child {color: orange;}<--find all items that are first-child to 						parent,think of DOM model. 
+
+	li:nth-child(#) {color: purple;}<--finda all items that are specified 								number of child
+				      **counting starts at 1 not 0**
+
+	ex. div.relevant p:nth-child(3) {color:red;}
+		**3 child in paragraph list within div called relevant**
+
+
+DOM:
+				[<body>]
+				   |
+				   |
+			__________________________
+		       |			  |
+		      [<ol>]			[<ul>]
+			|			  |
+			|			  |
+		___________________________________________
+		|	     |	 		|          |
+		|	     |			|	   |
+ (1stchild)--->[<li>]     [<li>](2nd)         [<li>](3rd) [<li>](4th)...5..etc
+		|            |		        |          |
+		|            |			|          |
+	[content displayed]	      [content displayed]	
+
+
+
+
+
+	     
+
